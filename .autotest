@@ -1,0 +1,6 @@
+require 'autotest/growl'
+require 'autotest/restart'
+require 'autotest/timestamp'
+
+Autotest::Growl::clear_terminal = false
+
