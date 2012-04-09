@@ -1,4 +1,6 @@
 SampeApp::Application.routes.draw do
+  get "users/new" 
+
   get "pages/home"
 
   get "pages/contact"
@@ -8,11 +10,17 @@ SampeApp::Application.routes.draw do
   get "pages/help"
 
   SampeApp::Application.routes.draw do
+  get "users/new"
+
+    match '/signup',  :to => 'users#new'
+
     match '/contact', :to => 'pages#contact'
     match '/about', :to => 'pages#about'
     match '/help', :to => 'pages#help'
 
     root :to => 'pages#home'
+
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
